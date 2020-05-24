@@ -24,7 +24,10 @@ app.get('/:urlId', (request, response) => {
         result += (curr * Math.pow(61, j));
     }
     fetch(service + "/getUrl/" + result)
-        .then(x => response.redirect(x))
+        .then(x => {
+            console.log(x);
+            response.redirect(x);
+        })
         .catch(e => response.status(500).send('The link could not be found'));
 });
 
