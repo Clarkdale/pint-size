@@ -9,9 +9,11 @@ app.use(cors());
 
 var map = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
+var service = "https://smllr.herokuapp.com";
+
 app.get('/:urlId', (request, response) => {
     console.log(request.params.urlId);
-    /*
+    
     let curr;
     let init = request.params.urlId;
     let result = 0;
@@ -20,12 +22,9 @@ app.get('/:urlId', (request, response) => {
         curr = map.indexOf(init[i]);
         result += (curr * Math.pow(61, j));
     }
-    db.getIdUrl(result)
-        .then(x => {
-            response.redirect(x);
-        })
-        .catch(e => {console.trace(); response.status(500).send('Could not find the designated link')});
-    */
+    fetch(`${service}/getUrl/${result}`)
+        .then(x => response.redirect(x))
+        .catch(e => response.status(500).send('The link could not be found'));
 });
 
 // start the server
