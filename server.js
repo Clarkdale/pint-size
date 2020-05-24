@@ -22,8 +22,7 @@ app.get('/:urlId', (request, response) => {
         result += (curr * Math.pow(61, j));
     }
     console.log(result);
-    
-    fetch(service + "/getUrl/" + result)
+    fetch(`${service}/getUrl/${result}`)
         .then(res => {
             return res.json();
         })
