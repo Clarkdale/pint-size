@@ -1,4 +1,5 @@
 const express = require('express');
+const fetch = require("node-fetch");
 var cors = require('cors');
 
 // create the server
