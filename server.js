@@ -24,6 +24,9 @@ app.get('/:urlId', (request, response) => {
     console.log(result);
     
     fetch(service + "/getUrl/" + result)
+        .then(res => {
+            return res.json();
+        })
         .then(x => {
             console.log(x);
             //response.redirect(x);
