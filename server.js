@@ -22,7 +22,7 @@ app.get('/:urlId', (request, response) => {
         curr = map.indexOf(init[i]);
         result += (curr * Math.pow(61, j));
     }
-    fetch(`${service}/getUrl/${result}`)
+    fetch(service + "/getUrl/" + result)
         .then(x => response.redirect(x))
         .catch(e => response.status(500).send('The link could not be found'));
 });
