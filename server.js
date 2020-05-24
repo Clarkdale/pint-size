@@ -28,8 +28,7 @@ app.get('/:urlId', (request, response) => {
             return res.json();
         })
         .then(x => {
-            console.log(x);
-            //response.redirect(x);
+            response.redirect(x);
         })
         .catch(e => response.status(500).send('The link could not be found'));
         
