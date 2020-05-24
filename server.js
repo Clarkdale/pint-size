@@ -21,7 +21,6 @@ app.get('/:urlId', (request, response) => {
         curr = map.indexOf(init[i]);
         result += (curr * Math.pow(61, j));
     }
-    console.log(result);
     fetch(`${service}/getUrl/${result}`)
         .then(res => {
             return res.json();
