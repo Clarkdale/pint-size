@@ -39,6 +39,8 @@ function convertBase10(base61Number) {
         curr = base61Map.indexOf(base61Number[i]);
         retVal += (curr * Math.pow(61, j));
     }
+
+    return retVal;
 }
 
 // start the server
