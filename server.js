@@ -13,14 +13,6 @@ var base61Map = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 var service = "https://smllr.herokuapp.com";
 
 app.get('/:urlId', (request, response) => {  
-    let curr;
-    let init = request.params.urlId;
-    let result = 0;
-
-    for (let i = 0, j = init.length - 1; i < init.length && j >= 0; i++, j--) {
-        curr = base61Map.indexOf(init[i]);
-        result += (curr * Math.pow(61, j));
-    }
     fetch(`${service}/getUrl/${convertBase10(request.params.urlId)}`)
         .then(res => {
             return res.json();
@@ -34,7 +26,7 @@ app.get('/:urlId', (request, response) => {
 
 function convertBase10(base61Number) {
     let retVal = 0;
-
+    let curr;
     for (let i = 0, j = base61Number.length - 1; i < base61Number.length && j >= 0; i++, j--) {
         curr = base61Map.indexOf(base61Number[i]);
         retVal += (curr * Math.pow(61, j));
