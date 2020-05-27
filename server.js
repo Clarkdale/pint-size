@@ -18,6 +18,9 @@ app.get('/:urlId', (request, response) => {
             return res.json();
         })
         .then(x => {
+            if (!(x.startsWith("http://") || x.startsWith("https://"))) {
+                x = "http://" + x;
+            }
             response.redirect(x);
         })
         .catch(e => response.status(500).send('The link could not be found'));
