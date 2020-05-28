@@ -16,6 +16,10 @@ app.get('/', (request, response) => {
 	response.sendFile(__dirname + '/index.html');
 });
 
+app.get('/index.html', (request, response) => {
+	response.sendFile(__dirname + '/index.html');
+});
+
 app.get('/:urlId', (request, response) => {  
     fetch(`${service}/getUrl/${convertBase10(request.params.urlId)}`)
         .then(res => {
@@ -28,7 +32,6 @@ app.get('/:urlId', (request, response) => {
             response.redirect(x);
         })
         .catch(e => response.status(500).send('The link could not be found'));
-        
 });
 
 function convertBase10(base61Number) {
