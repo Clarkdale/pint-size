@@ -12,6 +12,10 @@ var base61Map = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 var service = "https://smllr.herokuapp.com";
 
+app.get('/', (request, response) => {
+	response.sendFile(__dirname + '/index.html');
+});
+
 app.get('/:urlId', (request, response) => {  
     fetch(`${service}/getUrl/${convertBase10(request.params.urlId)}`)
         .then(res => {
