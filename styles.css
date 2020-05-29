@@ -2,6 +2,32 @@ body {
     background-color: #0A122A;
 }
 
+footer {
+    color: #faf0db;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.chrome-link {
+    color: #f9a21e;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+.chrome-link:hover {
+    color: #fcce0b;
+}
+
+.logo-text:hover {
+    text-decoration: none;
+    color: #faf0db;
+}
+
 .logo-container {
     margin: 20px;
 }
