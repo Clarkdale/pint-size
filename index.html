@@ -7,7 +7,108 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+    background-color: #0A122A;
+}
+
+.logo-container {
+    margin: 20px;
+}
+
+.logo-text {
+    color: #faf0db;
+    font-size: 25px;
+}
+
+.url-form {
+    background-color: #30323D;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 2.5%;
+    width: 95%;
+    padding: 20px 10px 20px 10px;
+    border-radius: 10px;
+}
+
+.full-input {
+    border: none;
+    border-radius: 10px;
+    width: 98.4%;
+    height: 60px;
+    padding: 0 20px;
+    display: inline-block;
+    box-shadow: none;
+    background-color: #f6f7f8;
+}
+
+.full-input:focus {
+    outline: none;
+}
+
+.url-input {
+    margin-right: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 72%;
+    height: 60px;
+    padding: 0 20px;
+    display: inline-block;
+    box-shadow: none;
+    background-color: #f6f7f8;
+    -webkit-transition: box-shadow 0.5s;
+    -moz-transition: box-shadow 0.5s;
+    -o-transition: box-shadow 0.5s;
+    transition: box-shadow 0.5s;
+}
+
+.url-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2pt #f9a21e;
+}
+
+.url-submit {
+    background-color: #f9a21e;
+    border-radius: 10px;
+    border: none;
+    min-width: 25%;
+    float: right;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+
+.url-submit:hover {
+    background-color: #fcce0b;
+}
+
+.url-submit:focus {
+    outline: none;
+}
+
+@keyframes placeHolderShimmer{
+    from {
+        background-position: -150px 0;
+    }
+    to {
+        background-position: 4000px 0;
+    }
+
+}
+
+.animated_background {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddd 18%, #eeeeee 33%);
+    background-size: auto;
+}
+    </style>
     <title>Pint Sized</title>
   </head>
   <body>
