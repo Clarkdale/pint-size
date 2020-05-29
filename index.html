@@ -26,6 +26,7 @@
             if (input.value != '') {
                 let url = input.value;
                 input.value = "";
+                input.placeholder = "";
                 button.parentNode.removeChild(button);
                 document.getElementById("url-input").className = "full-input animated_background";
                 fetch("https://smllr.herokuapp.com/addUrl/" + url)
