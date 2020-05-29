@@ -1,9 +1,48 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Pint Sized</title>
   </head>
   <body>
-    <h1>Hello</h1>
+    <div class="logo-container">
+        <img alt="logo" src="icon.png">
+        <span class="logo-text">Pint Sized</span>
+    </div>
+    <form class="url-form">
+        <input type="text" placeholder="Your URL" class="url-input" id="url-input" required>
+        <input type="submit" value="Shorten" class="url-submit" id="shorten_button" onclick="removeButton()">
+    </form>
+    <script>
+        function removeButton() {
+            var input = document.getElementById("url-input");
+            var button = document.getElementById('shorten_button');
+            if (input.value != '') {
+                let url = input.value;
+                input.value = "";
+                button.parentNode.removeChild(button);
+                document.getElementById("url-input").className = "full-input animated_background";
+                fetch("https://smllr.herokuapp.com/addUrl/" + url)
+                    .then(init => { return init.json() })
+                    .then(response => {
+                        input.value = "http://pint.pw/" + response;
+                        input.onclick = input.select;
+                        input.className = "full-input";
+                    });
+            }
+            return false;
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
