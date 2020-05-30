@@ -46,17 +46,25 @@ footer {
     width: 95%;
     padding: 20px 10px 20px 10px;
     border-radius: 10px;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition:    background-color 0.5s;
+    -o-transition:      background-color 0.5s;
+    transition:         background-color 0.5s;
 }
 
-.full-input {
-    border: none;
+.form-after {
+    background-color: #faf0db;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 2.5%;
+    width: 95%;
+    padding: 20px 10px 20px 10px;
     border-radius: 10px;
-    width: 98.4%;
-    height: 60px;
-    padding: 0 20px;
-    display: inline-block;
-    box-shadow: none;
-    background-color: #f6f7f8;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition:    background-color 0.5s;
+    -o-transition:      background-color 0.5s;
+    transition:         background-color 0.5s;
 }
 
 .full-input:focus {
@@ -73,11 +81,33 @@ footer {
     padding: 0 20px;
     display: inline-block;
     box-shadow: none;
-    background-color: #f6f7f8;
+    background-color: #faf0db;
     -webkit-transition: box-shadow 0.5s;
-    -moz-transition: box-shadow 0.5s;
-    -o-transition: box-shadow 0.5s;
-    transition: box-shadow 0.5s;
+    -moz-transition:    box-shadow 0.5s;
+    -o-transition:      box-shadow 0.5s;
+    transition:         box-shadow 0.5s;
+}
+
+.input-after {
+    color: #0A122A;
+    margin-right: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 72%;
+    height: 60px;
+    padding: 0 20px;
+    display: inline-block;
+    box-shadow: none;
+    background-color: #faf0db;
+    box-shadow: 0 0 0 2pt #30323D;
+    -webkit-transition: box-shadow 0.5s;
+    -moz-transition:    box-shadow 0.5s;
+    -o-transition:      box-shadow 0.5s;
+    transition:         box-shadow 0.5s;
+}
+
+.input-after:focus {
+    outline: none;
 }
 
 .url-input:focus {
@@ -97,11 +127,32 @@ footer {
     transition: background-color 0.5s;
 }
 
+.button-after {
+    background-color: #30323D;
+    color: #f6f7f8;
+    border-radius: 10px;
+    border: none;
+    min-width: 25%;
+    float: right;
+    -webkit-transition: background-color 0.5s, opacity 0.5s;
+    -moz-transition:    background-color 0.5s, opacity 0.5s;
+    -o-transition:      background-color 0.5s, opacity 0.5s;
+    transition:         background-color 0.5s, opacity 0.5s;
+}
+
 .url-submit:hover {
     background-color: #fcce0b;
 }
 
 .url-submit:focus {
+    outline: none;
+}
+
+.button-after:hover {
+    opacity: 70%;
+}
+
+.button-after:focus {
     outline: none;
 }
 

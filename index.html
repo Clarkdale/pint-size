@@ -15,32 +15,59 @@
     <div class="logo-container">
       <a href="index.html" class="logo-text"><img alt="logo" src="icon.png">Pint Sized</a>
     </div>
-    <form class="url-form">
+    <form class="url-form" id="the_form">
         <input type="text" placeholder="Your URL" class="url-input" id="url-input" required>
-        <input type="submit" value="Shorten" class="url-submit" id="shorten_button" onclick="removeButton()">
+        <input type="submit" value="Shorten" class="url-submit" id="shorten_button" onclick="return removeButton()">
     </form>
     <footer>
       <span>Download the <a href="https://chrome.google.com/webstore/detail/pint-sized/enjhimdpmhjbjoggiahgdajimlkilhno" class="chrome-link">Chrome Extension</a></span>
     </footer>
     <script>
+        var curr;
         function removeButton() {
             var input = document.getElementById("url-input");
             var button = document.getElementById('shorten_button');
+            var form = document.getElementById("the_form");
             if (input.value != '') {
                 let url = input.value;
-                input.value = "";
-                input.placeholder = "";
-                button.parentNode.removeChild(button);
-                document.getElementById("url-input").className = "full-input animated_background";
+                button.onclick = function() {
+                  return false;
+                }
+                button.value = "Checking taps...";
                 fetch("https://smllr.herokuapp.com/addUrl/" + url)
                     .then(init => { return init.json() })
                     .then(response => {
                         input.value = "http://pint.pw/" + response;
+                        curr = input.value;
+                        input.onkeydown = changeBack;
                         input.onclick = input.select;
-                        input.className = "full-input";
+                        form.className = "form-after";
+                        button.className = "button-after";
+                        input.className = "input-after";
+                        button.value = "Copy";
+                        button.onclick = function() {
+                          input.select();
+                          document.execCommand('copy');
+                          window.getSelection().removeAllRanges();
+                          button.value = "Copied to Clipboard!";
+                          return false;
+                        }
                     });
             }
             return false;
+        }
+
+        function changeBack() {
+          var input = document.getElementById("url-input");
+          var button = document.getElementById('shorten_button');
+          var form = document.getElementById("the_form");
+          if (input.value !== curr) {
+            button.onclick = removeButton;
+            form.className = "url-form";
+            button.className = "url-submit";
+            input.className = "url-input";
+            button.value = "Shorten";
+          }
         }
     </script>
     <!-- Optional JavaScript -->
