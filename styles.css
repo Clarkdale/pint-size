@@ -39,7 +39,6 @@ footer {
 
 .url-form {
     background-color: #30323D;
-    width: 100%;
     display: flex;
     justify-content: center;
     margin-left: 2.5%;
@@ -88,6 +87,23 @@ footer {
     transition:         box-shadow 0.5s;
 }
 
+.url-bad {
+    color: #0A122A;
+    margin-right: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 72%;
+    height: 60px;
+    padding: 0 20px;
+    display: inline-block;
+    box-shadow: 0 0 0 2pt red;;
+    background-color: #faf0db;
+    -webkit-transition: box-shadow 0.5s;
+    -moz-transition:    box-shadow 0.5s;
+    -o-transition:      box-shadow 0.5s;
+    transition:         box-shadow 0.5s;
+}
+
 .input-after {
     color: #0A122A;
     margin-right: 20px;
@@ -113,6 +129,14 @@ footer {
 .url-input:focus {
     outline: none;
     box-shadow: 0 0 0 2pt #f9a21e;
+}
+
+.url-bad:focus {
+    outline: none;
+}
+
+.url-bad::selection {
+    background: #f9a21e
 }
 
 .url-input::selection {
@@ -162,25 +186,4 @@ footer {
 
 .button-after:focus {
     outline: none;
-}
-
-@keyframes placeHolderShimmer{
-    from {
-        background-position: -150px 0;
-    }
-    to {
-        background-position: 4000px 0;
-    }
-
-}
-
-.animated_background {
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-name: placeHolderShimmer;
-    animation-timing-function: linear;
-    background: #f6f7f8;
-    background: linear-gradient(to right, #eeeeee 8%, #dddd 18%, #eeeeee 33%);
-    background-size: auto;
 }
