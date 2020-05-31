@@ -115,6 +115,14 @@ footer {
     box-shadow: 0 0 0 2pt #f9a21e;
 }
 
+.url-input::selection {
+    background: #f9a21e
+}
+
+.input-after::selection {
+    background: #f9a21e;
+}
+
 .url-submit {
     background-color: #f9a21e;
     border-radius: 10px;
