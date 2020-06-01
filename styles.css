@@ -187,6 +187,7 @@ footer {
     -moz-transition: background-color 0.5s;
     -o-transition: background-color 0.5s;
     transition: background-color 0.5s;
+    -webkit-appearance: none;
 }
 
 .button-after {
@@ -200,6 +201,7 @@ footer {
     -moz-transition:    background-color 0.5s, opacity 0.5s;
     -o-transition:      background-color 0.5s, opacity 0.5s;
     transition:         background-color 0.5s, opacity 0.5s;
+    -webkit-appearance: none;
 }
 
 .url-submit:hover {
