@@ -4,7 +4,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     text-align: left;
-
+    margin: 0;
 }
 
 footer {
@@ -18,6 +18,27 @@ footer {
 
 a {
     text-decoration: none;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+input {
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+footer {
+    display: block;
 }
 
 .chrome-link {
@@ -183,6 +204,7 @@ a {
 
 .url-submit:hover {
     background-color: #fcce0b;
+    cursor: pointer;
 }
 
 .url-submit:focus {
@@ -191,6 +213,7 @@ a {
 
 .button-after:hover {
     opacity: 70%;
+    cursor: pointer;
 }
 
 .button-after:focus {
