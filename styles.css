@@ -96,10 +96,6 @@ footer {
     transition:         background-color 0.5s;
 }
 
-.full-input:focus {
-    outline: none;
-}
-
 .url-input {
     color: #0A122A;
     margin-right: 20px;
@@ -126,7 +122,7 @@ footer {
     height: 60px;
     padding: 0 20px;
     display: inline-block;
-    box-shadow: 0 0 0 2pt red;;
+    box-shadow: 0 0 0 2pt red;
     background-color: #faf0db;
     -webkit-transition: box-shadow 0.5s;
     -moz-transition:    box-shadow 0.5s;
@@ -220,4 +216,55 @@ footer {
 
 .button-after:focus {
     outline: none;
+}
+
+@media (max-width: 1000px) {
+    .url-form, .form-after {
+        flex-wrap: wrap;
+        flex-basis: 100%;
+    }
+
+    .url-submit, .button-after {
+        background-color: #f9a21e;
+        border-radius: 10px;
+        border: none;
+        width: 100%;
+        float: left;
+        height: 60px;
+        -webkit-transition: background-color 0.5s;
+        -moz-transition: background-color 0.5s;
+        -o-transition: background-color 0.5s;
+        transition: background-color 0.5s;
+        -webkit-appearance: none;
+    }
+
+    .url-input, .url-bad, .input-after {
+        color: #0A122A;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        height: 60px;
+        padding: 0 20px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        display: unset;
+        box-shadow: none;
+        background-color: #faf0db;
+        -webkit-transition: box-shadow 0.5s;
+        -moz-transition:    box-shadow 0.5s;
+        -o-transition:      box-shadow 0.5s;
+        transition:         box-shadow 0.5s;
+    }
+
+    .url-bad {
+        box-shadow: 0 0 0 2pt red;
+    }
+
+    .input-after {
+        box-shadow: 0 0 0 2pt #30323D;
+    }
+
+    .button-after {
+        background-color: #30323D;
+    }
 }
