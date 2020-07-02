@@ -26,7 +26,7 @@
             var button = document.getElementById('shorten_button');
             var form = document.getElementById("the_form");
             if (input.value != '') {
-                let url = input.value;
+                let url = encodeURIComponent(input.value);
                 button.onclick = function() {
                   return false;
                 }
