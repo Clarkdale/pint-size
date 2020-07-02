@@ -30,7 +30,7 @@ app.get('/:urlId', (request, response) => {
             if (!(x.startsWith("http://") || x.startsWith("https://"))) {
                 x = "http://" + x;
             }
-            response.redirect(x);
+            response.redirect(decodeURI(x));
         })
         .catch(e => response.status(500).send('The link could not be found'));
 });
