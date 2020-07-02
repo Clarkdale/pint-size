@@ -267,4 +267,8 @@ footer {
     .button-after {
         background-color: #30323D;
     }
+
+    .footer_note {
+        display: none;
+    }
 }
